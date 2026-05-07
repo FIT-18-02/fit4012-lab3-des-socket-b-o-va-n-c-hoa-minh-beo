@@ -22,7 +22,19 @@ def main() -> None:
             header = recv_exact(conn, HEADER_SIZE)
             key, iv, length = parse_header(header)
             cipher_bytes = recv_exact(conn, length)
-            plaintext = decrypt_des_cbc(key, iv, cipher_bytes)
+            #Start Ca 4
+            # corrupted_cipher = bytearray(cipher_bytes)
+            # corrupted_cipher[0] = (corrupted_cipher[0] + 1) % 256 
+            # cipher_bytes = bytes(corrupted_cipher)
+            # print("[!] Đã chủ động làm hỏng Ciphertext để kiểm tra lỗi Padding.")
+            # try:
+            #     plaintext = decrypt_des_cbc(key, iv, cipher_bytes)
+            #     message = plaintext.decode('utf-8', errors='ignore')
+            #     print(f"[+] Bản tin gốc: {message}")
+            # except ValueError as e:
+            #     print(f"[!] LỖI PHÁT HIỆN: {e}")
+            #End Ca 4
+            plaintext = decrypt_des_cbc(key, iv, cipher_bytes) #Xóa khi dùng Ca 4
             message = plaintext.decode('utf-8', errors='ignore')
             line = f"[+] Bản tin gốc: {message}"
             print(line)
