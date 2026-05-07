@@ -35,4 +35,8 @@ Minh chứng được lưu trong thư mục `logs/`, bao gồm:
 ## Kết luận
 Qua bài lab, nhóm hiểu rõ hơn về cơ chế hoạt động của TCP socket, DES-CBC, IV và PKCS#7 padding. Bài lab cũng cho thấy việc truyền khóa DES dạng plaintext là không an toàn và cần có cơ chế trao đổi khóa tốt hơn trong hệ thống thực tế.
 
+<<<<<<< HEAD
 Ngoài ra, nhóm rút ra được tầm quan trọng của kiểm thử lỗi, xử lý exception và threat model trong quá trình phát triển hệ thống mạng và bảo mật thông tin.
+=======
+Ngoài ra, nhóm rút ra được tầm quan trọng của kiểm thử lỗi, xử lý exception và threat model trong quá trình phát triển hệ thống mạng và bảo mật thông tin.
+>>>>>>> 7051a91dd9073f1a42eab05cb60449e647968b8e
